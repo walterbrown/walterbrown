@@ -1,0 +1,27 @@
+﻿@{var imagePath=""; 
+ if (Request["Choice"] != null)   
+  {imagePath="Images/" + Request["Choice"];}
+    
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+    </head>
+    <body>
+        <h1>Mostrar Imagenes</h1> 
+        <form method="post" action=""> 
+        selecciona la imagen que quieres ver: 
+        <select name="Choice">   
+        <option value=“cupcakes.jpg">Foto 1</option>   
+        <option value=“bread.jpg">Foto 2</option>  
+        <option value=“carrot_cake.jpg">Foto 3</option> 
+        </select> <input type="submit" value=“Enviar" /> 
+        @if (imagePath != "")
+        {
+       <p><img src="@imagePath" alt="Sample" /></p>}  </form> 
+    </body>
+</html>
